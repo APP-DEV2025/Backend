@@ -6,6 +6,9 @@ import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import hostelRoutes from "./routes/hostelRoutes.js";
 import bookingRoutes from "./routes/bookingRoutes.js";
+import profileRoutes from "./routes/profileRoutes.js";
+import paymentRoutes from "./routes/paymentRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
@@ -19,6 +22,9 @@ app.use(morgan("dev"));
 app.use("/api/users", userRoutes);
 app.use("/api/hostels", hostelRoutes);
 app.use("/api/bookings", bookingRoutes);
+app.use("/api/profiles", profileRoutes);
+app.use("/api/payments", paymentRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.use(notFound);
 app.use(errorHandler);
